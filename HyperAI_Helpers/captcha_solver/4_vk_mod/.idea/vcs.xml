@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassGen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VkHacker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/output/totenserflow/keras_to_tensorflow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vk_captcha_lib/VkHacker" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4px #1c87c9;
+  }
+.OutlineText {
+	font: Impact;
+	font-size: 33px;
+    color: black;
+    text-shadow:
+    /* Outline */
+    -1px -1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px 1px 0 #000000,  
+    -2px 0 0 #000000,
+    2px 0 0 #000000,
+    0 2px 0 #000000,
+    0 -2px 0 #000000; /* Terminate with a semi-colon */
+}
+.strokeme
+{
+    color: black;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+/*https://stackoverflow.com/questions/11323813/how-to-outline-text-in-html-css*/

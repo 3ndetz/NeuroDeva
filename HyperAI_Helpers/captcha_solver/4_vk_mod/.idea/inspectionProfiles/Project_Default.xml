@@ -1,0 +1,59 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="line-clamp" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="mysql-connector-python-rf" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="false">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true">
+        <option name="ignoredErrors">
+          <list>
+            <option value="E401" />
+            <option value="E703" />
+            <option value="E701" />
+            <option value="E302" />
+            <option value="E301" />
+            <option value="E402" />
+            <option value="E702" />
+            <option value="E722" />
+            <option value="E252" />
+          </list>
+        </option>
+      </scope>
+      <option name="ignoredErrors">
+        <list>
+          <option value="E401" />
+          <option value="E703" />
+          <option value="E701" />
+          <option value="E302" />
+          <option value="E301" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="worker.RequestAdapter" />
+          <option value="object.__getattr__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
