@@ -1,10 +1,10 @@
 from obswebsocket import obsws, events, requests  # noqa: E402
-
+from HyperAI_Secrets import OBS_WS_PASSWORD
 
 class OBS_Websocket():
     host = "localhost"
     port = 4455
-    password = "h4sXG6mppje0wll4"
+    password = OBS_WS_PASSWORD
     connected = False
     ws = None
 

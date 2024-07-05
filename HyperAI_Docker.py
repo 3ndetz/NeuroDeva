@@ -198,7 +198,7 @@ if __name__ == "__main__":
         get_or_run_docker_container()
         print('EXITING..')
         exit()
-    #debugFunc()
+    debugFunc()
     # TEST LLM ON OTHER SIDE
     #kill_docker_reciever()
 

@@ -2,7 +2,7 @@
 *.bmp
 *.tif
 *.heic
-*.PNG
+#*.PNG
 *.TIF
 *.HEIC
 
@@ -264,3 +264,5 @@ fabric.properties
 /HyperAI_Helpers/captcha_solver/4_vk_mod/requirements.txt
 /HyperAI_VTube/requirements.txt
 /.idea/vcs.xml
+/HyperAI_Social/youtube/
+/HyperAI_Social/trovo/
