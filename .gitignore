@@ -199,6 +199,8 @@ HyperAI_Models/Filters/models
 HyperAI_Models/TTS/variants
 HyperAI_Models/STT/docker_to_send/stt_ru_fastconformer_hybrid_large_pc
 
+HyperAI_Helpers/captcha_solver/4_vk_mod/code/images
+
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -261,8 +263,6 @@ fabric.properties
 /.idea/inspectionProfiles/profiles_settings.xml
 /HyperAI_Helpers/captcha_solver/4_vk_mod/README.md
 /HyperAI_VTube/README.md
-/HyperAI_Helpers/captcha_solver/4_vk_mod/requirements.txt
-/HyperAI_VTube/requirements.txt
+!/HyperAI_Helpers/captcha_solver/4_vk_mod/requirements.txt
+!/HyperAI_VTube/requirements.txt
 /.idea/vcs.xml
-/HyperAI_Social/youtube/
-/HyperAI_Social/trovo/
