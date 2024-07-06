@@ -298,17 +298,17 @@ def FILTERS_PROCESS(ctx):
                 if topic in 'politics,racism,religion,terrorism,suicide'.split(','):
                     score += -10
 
-                elif topic in 'offline_crime,drugs,social_injustice'.split(','):
+                if topic in 'offline_crime,drugs,social_injustice'.split(','):
                     score += -1
-                elif topic in 'pornography,prostitution,sexism,sexual_minorities'.split(','):
+                if topic in 'pornography,prostitution,sexism,sexual_minorities'.split(','):
                     score += -0.5
-                elif topic in 'online_crime'.split(','):
+                if topic in 'online_crime'.split(','):
                     score += -0.25
-                elif topic in 'body_shaming,health_shaming'.split(','):
+                if topic in 'body_shaming,health_shaming'.split(','):
                     score += -0.1
-                elif topic in 'slavery,gambling,weapons'.split(','):
+                if topic in 'slavery,gambling,weapons'.split(','):
                     score += -0.01
-                else:
+                if score >=0:
                     score += 0.5
                 # print(i, 'inp = ', self.tokenizer.decode(tokens_ids[0]), '\nallow =', allow, 'preds =', preds)
 
