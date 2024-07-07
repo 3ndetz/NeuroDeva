@@ -18,10 +18,10 @@ Languages: Python, Java ([for Minecraft-part](https://github.com/3ndetz/autoclef
 
 <details><summary>ML stack:</summary>
 
-- Speech
-  - TTS
-  - STT
 - NLP
+  - Speech
+    - TTS
+    - STT
   - generative: T5 LLM
     - dialog system
   - classification: BERT (modified, multiple)
