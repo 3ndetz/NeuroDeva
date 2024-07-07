@@ -14,11 +14,22 @@ Automatic virtual streaming system. Completely autonomus.
 
 Name aliases: NeuroDeva, NetTyan
 
-## Кратко о главном
+## Коротко о главном
 
 Полностью автоматическая виртуальная стримерша. Играет в Minecraft в мини-режим SkyWars. Общается с игроками и зрителями в реальном времени.
 
 Подробнее с проектом можно ознакомиться на [хабре](https://habr.com/ru/articles/812387/), здесь только общее описание технической части.
+<!--
+<div align="center">
+	<br>
+	<a href="https://habr.com/ru/articles/812387/">
+		<img src=".github/header.svg" width="800" height="463" alt="Читать на habr">
+	</a>
+	<br>
+</div>
+-->
+
+<img src=".github/header.svg" width="800" height="463" alt="Читать на habr">
 
 [<img src=".github/portfolio-details-2.jpg" height="250"/>](https://habr.com/ru/articles/812387/)
 
