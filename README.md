@@ -12,36 +12,80 @@ Streams block game. Plays block game. Talking with people.
 
 Automatic virtual streaming system. Completely autonomus.
 
-Name aliases: NeuroDeva, NetTyan
+Project name aliases: NeuroDeva, NetTyan
+
+Languages: Python, Java ([for Minecraft-part](https://github.com/3ndetz/autoclef))
+
+<details><summary>ML stack:</summary>
+
+- Speech
+  - TTS
+  - STT
+- NLP
+  - generative: T5 LLM
+    - dialog system
+  - classification: BERT (modified, multiple)
+    - toxic detection
+    - phrase type classification
+- CV (MC captcha resolver)
+  - keras-ocr
+  - onnx
+</details>
+
+<details><summary>Some python packages</summary>
+
+- torch
+- multiprocessing
+- multithreading
+- flask
+- websocket
+- asyncio
+- pysimplegui
+- py4j
+- sqlite
+- tensorflow (a bit)
+- and more, of course...
+</details>
+
+<details><summary>IDE and other software:</summary>
+
+- JB PyCharm Community and Intellij Idea
+- OBS
+- VTube Studio
+- Docker Desktop (WSL)
+- Made on Windows 10
+</details>
+
+<details><summary>RepoCodeDisclaimer ⚠️</summary>
+The "code" presented in the repository is mostly for prototyping. It should not be considered as a sample, it can be useful only to those who will be interested in repeating my experience, and not for "seekers of other people's mistakes" =)
+
+The emphasis was on the fact that in the shortest possible time to make a project that can really impress someone and once again prove the fact that everything is possible 💪
+
+In the code you can see huge commented out dumps, don't pay attention, because I had a choice to publish the code or not. I didn't format it in any way and didn't prepare it for publishing, so I didn't hesitate to leave crutches and other nasty things in there, like debug prints. However, I did format some things, but only the most attentive will notice this "feature".
+
+</details>
 
 ## Коротко о главном
 
 Полностью автоматическая виртуальная стримерша. Играет в Minecraft в мини-режим SkyWars. Общается с игроками и зрителями в реальном времени.
 
-Подробнее с проектом можно ознакомиться на [хабре](https://habr.com/ru/articles/812387/), здесь только общее описание технической части.
-<!--
 <div align="center">
-	<br>
 	<a href="https://habr.com/ru/articles/812387/">
-		<img src=".github/header.svg" width="800" height="463" alt="Читать на habr">
+		<img src=".github/header.svg" width="500" height="250" alt="">
 	</a>
-	<br>
 </div>
--->
 
-<img src=".github/header.svg" width="800" height="463" alt="Читать на habr">
-
-[<img src=".github/portfolio-details-2.jpg" height="250"/>](https://habr.com/ru/articles/812387/)
-
-<details><summary>RepoCodeDisclaimer ⚠️</summary>
-Сразу скажу, что «код», который представлен в репозитории, по большей части для прототипирования. Его не стоит считать за образец, он может быть полезен только тем, кому будет интересно повторить мой опыт, а не для «искателей чужих ошибок»))
-
- Упор делался на том, чтобы в максимально сжатые сроки сделать проект, который сможет кого-то действительно впечатлить и в очередной раз доказать, что возможно всё!
-
-В коде вы можете увидеть огромные закоментированные свалки, не обращайте внимания, т. к. у меня был выбор либо публиковать код, либо нет. Я никак не форматировал его и не подготавливал к выводу «в свет» и потому не стеснялся оставлять там костыли и другие неприятные вещи, например, принты для дебага. Однако кое‑что я всё‑таки форматнул, но эту особенность заметят только самые внимательные =)
+Подробнее с проектом можно ознакомиться на [хабре](https://habr.com/ru/articles/812387/), здесь только общее описание технической части.
 
 
-</details>
+
+<!--[<img src=".github/portfolio-details-2.jpg" height="250"/>](https://habr.com/ru/articles/812387/)-->
+
+<div align="center">
+	<a href="https://habr.com/ru/articles/812387/">
+		<img src=".github/portfolio-details-2.jpg" height="250"/>
+	</a>
+</div>
 
 ## ФИЧИ
 
@@ -211,9 +255,6 @@ Name aliases: NeuroDeva, NetTyan
       1. Поменяйте список ников в HyperAI.py/botNicknames на те, которые ваш персонаж будет использовать в игре и в социальных сетях
       2. Создайте в корневой папке репозитория файл HyperAI_Secrets.py и добавьте туда строковые переменные DiscordToken, DockerAuthKey, TrovoClientID, TrovoAccessToken, Razrabs и OBS_WS_PASSWORD.
       3. Создайте в папке HyperAI_Docker/other файл HyperAI_DockerSecrets.py и введите туда DockerAuthKey = b"ваш_пароль_к_docker". То же значение той же переменной установите в HyperAI_Secrets.py из предыдущего шага.
-
-
-
    </details>
 
 6. <details><summary>Подключение к социальным сетям (раздел не готов 🚧)</summary>
@@ -225,13 +266,24 @@ Name aliases: NeuroDeva, NetTyan
    1. Скачайте и установите Docker Desktop. Если вы на Windows, включите в нём поддержку WSL (загуглите, если не найдёте в настройках).
    2. Отдельно запустите с помощью Python файл HyperAI_Docker.py и дождитесь окончания работы скрипта. Он установит нужный Docker-контейнер.
    </details>
-9. <details><summary>Запуск (раздел не готов 🚧)</summary>
+9. <details><summary>Запуск главного скрипта (раздел не готов 🚧)</summary>
     
    1. Убедитесь, что все предыдущие шаги настройки выполнены в полном объёме.
    2. Запустите Minecraft 1.18 с установленным клиентом. Установите ваш ник, который вы указали в коде ранее.
    3. Запустите Python-скрипт HyperAI.py и дождитесь открытия меню
-      </details>
-
+   </details>
+9. <details><summary>Запуск трансляции (раздел не готов 🚧)</summary>
+   
+   1. Выполните все шаги из предыдущего пункта "Запуск главного скрипта"
+   1. Подключитесь к нужному серверу Minecraft с запущенного клиента
+      - Полностью автоматическая игра в SkyWars поддерживается на данный момент только на MusteryWorld, но там новая капчу, придётся её ввести вручную
+      - Вы можете использовать другие сервера со SkyWars с запуском вручную:
+        - подключайтесь к нужной игре
+        - дожидайтесь запуска
+        - вводите команду @test killall для включения терминатора
+   2. Запустите стриминговую программу OBS и убедитесь, что всё работает
+   3. Нажмите кнопку запуска в gui-окне скрипта
+   </details>
 
 
 

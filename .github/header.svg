@@ -1,4 +1,4 @@
-<svg fill="none" viewBox="0 0 800 463" width="800" height="463" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<style>
@@ -52,19 +52,14 @@
 					justify-content: center;
 					margin: 0;
 					width: 100%;
-					height: 100%;
-					background: center/10% url('portfolio-details-2.jpg'),
-								linear-gradient(-45deg, #fc5c7dff, #6a82fbff, #05dfd7ff);
+					height: 400px;
+					background: linear-gradient(-45deg, #fc5c7dff, #6a82fbff, #05dfd7ff);
 					background-size: 600% 400%;
 					animation: gradientBackground 10s ease infinite;
 					border-radius: 10px;
 					color: white;
 					text-align: center;
 					transition: ease-in-out 1s;
-				}
-				.container:hover {
-					background: url('portfolio-details-2.jpg') center,
-								linear-gradient(-45deg, #fc5c7d00, #6a82fb00, #05dfd700);
 				}
 				h1 {
 					font-size: 50px;
@@ -80,24 +75,17 @@
 					animation: rotate ease-in-out 1s infinite alternate;
 					transition: ease-in-out 1s;
 				}
-				h1:hover {
-					color: #000000;
-				}
 				p {
 					font-size: 20px;
 					text-shadow: 0 1px 0 #efefef;
 					animation: 5s ease 0s normal forwards 1 fadeIn;
 					transition: ease-in-out 1s;
 				}
-				p:hover {
-					color: #000000;
-				}
 			</style>
 			<div class="container">
-				<h1>TTS, STT &amp; CV<br/>LLM, BERT and more!</h1>
-				<p>Читайте на хабре!</p>
+				<h1>TTS, STT, CV,<br/>LLM, BERT &amp; ...</h1>
+				<p>In a single project</p>
 			</div>
-
 		</div>
 	</foreignObject>
 </svg>

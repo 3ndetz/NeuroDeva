@@ -1913,14 +1913,14 @@ A:> NetTyan: {reply_without_filter} ({answer_filter_topics_str})
             print('[OBS] STREAM STOP PROGRAM END ==')
 
 
-        layout = [[sg.Text('Запускаем ?   '), sg.Text('чодедучобабкечомамечопапе'),
+        layout = [[sg.Text('Запускаем ?   '), sg.Text('controlpanel prototype NOT FOR PRODUCTION'),
                    sg.Button('????', key='CheckMultiprocessing'), sg.Button('Disco', key='LoadDiscord'),
                    sg.Button('Stream START', key='stream_start'), sg.Button('Stream STOP', key='stream_stop'),
                    sg.Checkbox(key='stream_debug', text='stream debug', default=False)],
                   [sg.Text('хихиххии   '), sg.InputText(key='CNInp'),
                    sg.Button('>>', key='Enter', bind_return_key=True)],
                   [sg.Text('пока запускается'), sg.Text('НИЧО НЕ ТРОГАЕМ!')],
-                  [sg.Button('       ДА       '), sg.Button('.!.'), sg.Button('Ран осн акк'),
+                  [sg.Button('       ДА       '), sg.Button('Ext'), sg.Button('Ран осн акк'),
                    sg.Checkbox(key='allowChatInteract', text='интеракт с чатом в майне?', default=False),
                    sg.Checkbox(key='youtubeChatInteract', text='YT chat interact', default=False),
                    sg.Checkbox(key='youtubeAppLogin', text='YT APP LOGIN', default=False),
@@ -1933,14 +1933,14 @@ A:> NetTyan: {reply_without_filter} ({answer_filter_topics_str})
 
                   [sg.Text('Ранг\tИмя', background_color='black', size=(25, 1), auto_size_text=False),
                    sg.Text('Сообщение', background_color='black', size=(25, 1), auto_size_text=False),
-                   sg.Button('.!.', key='CloseAll', tooltip='удалить'),
+                   sg.Button('Ext', key='CloseAll', tooltip='удалить'),
                    ],
 
                   [sg.Text('0\tdefault', key='1rank', background_color='black', size=(25, 1), auto_size_text=False,
                            visible=False),
                    sg.Text('Сообщение', key='1msg', background_color='black', size=(25, 1), auto_size_text=False,
                            visible=False),
-                   sg.Button('.!.', key='1cls', tooltip='удалить', visible=False),
+                   sg.Button('Ext', key='1cls', tooltip='удалить', visible=False),
                    ],
 
                   [sg.Txt('_' * 90)],
@@ -1960,7 +1960,7 @@ A:> NetTyan: {reply_without_filter} ({answer_filter_topics_str})
             while ctx.ThreadsActived:
                 event, values = window.read(timeout=0)
 
-                if event == sg.WIN_CLOSED or event == '.!.':  # if user closes window or clicks cancel
+                if event == sg.WIN_CLOSED or event == 'Ext':  # if user closes window or clicks cancel
                     CompleteShutDown(None, None)  # signal, frame)
                 elif firstcmd != '' and event == 'Enter':
                     CommandProcess(firstcmd, Manual=False, secondinp=values['CNInp'])
