@@ -57,6 +57,7 @@ Languages: Python, Java ([for Minecraft-part](https://github.com/3ndetz/autoclef
 </details>
 
 <details><summary>RepoCodeDisclaimer ⚠️</summary>
+
 The "code" presented in the repository is mostly for prototyping. It should not be considered as a sample, it can be useful only to those who will be interested in repeating my experience, and not for "seekers of other people's mistakes" =)
 
 The emphasis was on the fact that in the shortest possible time to make a project that can really impress someone and once again prove the fact that everything is possible 💪
