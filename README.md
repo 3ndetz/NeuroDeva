@@ -10,7 +10,7 @@ Streams block game. Plays block game. Talking with people.
 [<img src="https://img.shields.io/github/stars/3ndetz/AutoClef?style=flat&label=game-bot-repo&link=https%3A%2F%2Fgithub.com%2F3ndetz%2FAutoClef"/>](https://github.com/3ndetz/autoclef)
 [<img src="https://img.shields.io/twitch/status/neurodeva?style=flat&link=https%3A%2F%2Fwww.twitch.tv%2Fneurodeva"/>](https://www.twitch.tv/neurodeva)
 
-Automatic virtual streaming system. Completely autonomus.
+Automatic virtual streaming system. Completely autonomous.
 
 Project name aliases: NeuroDeva, NetTyan
 
