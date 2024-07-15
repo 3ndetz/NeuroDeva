@@ -125,6 +125,7 @@ In the code you can see huge commented out dumps, don't pay attention, because I
    - Элементы: индикатор настроения и псевдосинхронизированные субтитры ([хабр](https://habr.com/ru/articles/812387/#AnotherCode))
 - Диалоговая система - ([хабр](https://habr.com/ru/articles/812387/#ChatSystem)) - _HyperAI_Models/LLM_
    - RAG-like подход ([хабр со всеми схемами](https://habr.com/ru/articles/812387/#ДиалоговаяСхема))
+   - шаблоны промптов можно перезагружать прямо во время выполнения (они перезагружаются каждый раз при генерации текста, это сделано для непрерывного тестирования и разработки)
    - <details><summary>Пикча схемы сборщика промпта (абстрактно)</summary>
          <img src="https://habrastorage.org/getpro/habr/upload_files/18b/a93/94f/18ba9394f9b6cfc7b67c9bd74f44ec93.jpg" height="500"/>
       </details>
@@ -137,7 +138,7 @@ In the code you can see huge commented out dumps, don't pay attention, because I
    - Фильтры ИИ: токсичность, запретные темы ([хабр](https://habr.com/ru/articles/812387/#ФильтрацияДемо)) - _HyperAI_Models/Filters_
    - Обычный list-like фильтр на самые "опасные" слова - _HyperAI_Models/Filters_
 - Распознавание речи - ([хабр](https://habr.com/ru/articles/812387/#AnotherCode)) - _HyperAI_Models/STT/docker_to_send_
-   - Docker-based
+   - Docker-based. Удобная mount-система, весь не-контейнерный код (и модель) подгружается через диск, поэтому редачьте файлы как хотите прямо в основной репе, в докер лезть не надо)
    - Модель: Nvidia fastconformer hybrid large ([HF](https://huggingface.co/nvidia/stt_ru_fastconformer_hybrid_large_pc))
 - Подключение к социальным сетям - чтение чата и публикация ответов ([хабр](https://habr.com/ru/articles/812387/#AnotherCode))
    - youtube-data-api
