@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
+SOME OF PROMPTS REMOVED (because it has some secrets =)
+
 MOVE THIS FILE UPPER FROM FOLDER
-CHANGE TEXT LIKE YOU NEED
+CHANGE PROMPT TEXT FOR YOU NEEDS
 THIS NEED FOR RAG-LIKE SYSTEM WORK!
 
 FILE MAY BE OUTDATED, IF FOUND ERROR CREATE ISSUE/CHAT AUTHOR
@@ -116,7 +118,6 @@ class LLMExamples:
     def getParams(self):
         return self.params
 
-    # def chatbot(self,inp="успокойся",context="- Леха: динах сучарра</s>\n- Ева: Лепехе не хватает мозгов, чтобы понять что я пошутила. | Лепехе не хватает мозгов, чтобы понять что я пошутила. | <команда=!бан> [эмоция=агрессия]</s>\n"):
     def chatbot(self, inp="мда...", context=""):
         self.params = {
             "do_sample": True,
