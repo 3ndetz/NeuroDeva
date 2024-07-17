@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-SOME OF PROMPTS REMOVED (because it has some secrets =)
+SOME OF PROMPTS REMOVED / CHANGED (because it has some secrets =)
 
 MOVE THIS FILE UPPER FROM FOLDER
 CHANGE PROMPT TEXT FOR YOU NEEDS
