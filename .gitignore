@@ -265,4 +265,5 @@ fabric.properties
 /HyperAI_VTube/README.md
 !/HyperAI_Helpers/captcha_solver/4_vk_mod/requirements.txt
 !/HyperAI_VTube/requirements.txt
+!/HyperAI_Models/Filters/id2topic.json
 /.idea/vcs.xml
