@@ -1,6 +1,6 @@
 # NeuroDeva - TTS Branch
 
-## This branch focuses on refactoring and improving the Text-to-Speech (TTS) component of the NeuroDeva virtual streamer system.
+### This branch focuses on refactoring and improving the Text-to-Speech (TTS) component of the NeuroDeva virtual streamer system.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -33,7 +33,7 @@ WebSocket-based VTube Studio integration
 <!-- UPDATES -->
 ## Updates 
 
-###23.10.2024:
+### 23.10.2024:
 So far only separation of TTS module from the main branch, changed the structure & implementation in some parts. Improved project structure, better separation of concerns, proper async/await implementation, enhanced error handling.
 
 ## System Requirements
