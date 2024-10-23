@@ -1,9 +1,0 @@
-Requirement already satisfied: flatbuffers in /usr/local/lib/python3.8/dist-packages (2.0.7)
-Collecting flatbuffers
-  Downloading flatbuffers-23.5.26-py2.py3-none-any.whl (26 kB)
-Installing collected packages: flatbuffers
-  Attempting uninstall: flatbuffers
-    Found existing installation: flatbuffers 2.0.7
-    Uninstalling flatbuffers-2.0.7:
-      Successfully uninstalled flatbuffers-2.0.7
-Successfully installed flatbuffers-23.5.26
