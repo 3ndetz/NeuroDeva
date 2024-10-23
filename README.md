@@ -17,13 +17,7 @@
 
 
 ## TTS System Overview
-The TTS system is responsible for converting generated text responses into natural-sounding speech output. It integrates with:
-
-VTube Studio for lip sync animation
-OBS for streaming output
-Virtual audio routing for clean audio delivery
-
-## Key Components
+The TTS system is responsible for converting generated text responses from LLM into natural-sounding speech output. It integrates with:
 
 * Silero TTS Model Integration
 * Real-time lip sync with Live2D model
