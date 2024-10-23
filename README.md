@@ -47,7 +47,9 @@ Major code refactoring. Improved project structure, edited some parts (specifica
    ```
 2. Install the required packages:
    ```
-   cd ...\NeuroDeva
+   cd NeuroDeva
+   ```
+   ```
    pip install -r requirements.txt
    ```
 3. VTube Studio Setup:
