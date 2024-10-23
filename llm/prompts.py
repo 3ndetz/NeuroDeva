@@ -8,7 +8,7 @@ THIS NEED FOR RAG-LIKE SYSTEM WORK!
 
 FILE MAY BE OUTDATED, IF FOUND ERROR CREATE ISSUE/CHAT AUTHOR
 """
-from string_utils import NonRepeatRandom
+from .string_utils import NonRepeatRandom
 
 nrr = NonRepeatRandom({})
 
