@@ -1,14 +1,10 @@
-from enum import Enum, auto
+from enum import Enum
 
-class WebSocketMessageType(Enum):
-    AUTH_TOKEN_REQUEST = "AuthenticationTokenRequest"
-    AUTH_REQUEST = "AuthenticationRequest"
-    PARAMETER_DATA = "InjectParameterDataRequest"
+class ModelType(Enum):
+    INSTRUCT = "instruct"
+    DIALOG = "dialog"
 
-class TTSError(Exception):
-    """Base exception for TTS-related errors"""
-    pass
-
-class Live2DError(Exception):
-    """Base exception for Live2D-related errors"""
-    pass
+class StopReason(Enum):
+    SYMBOL = "symbol"
+    WORD = "word"
+    REPEAT = "repeat"
