@@ -1,24 +1,22 @@
 import json
 import os
 import websockets
+
 import multiprocessing
 from typing import Optional, Dict, Any
-from ..config.settings import VTubeStudioConfig
-from ..utils.exceptions import Live2DConnectionError
-from .fred_t5 import FRED_PROCESS, get_llm_formed_inputs
+from config.settings import Live2DConfig
+from utils.exceptions import Live2DConnectionError
+from llm.fred_t5 import FredT5
 
 class VTubeStudioIntegration:
-    """Integration with VTube Studio for Live2D avatar control."""
-    def __init__(self, config: VTubeStudioConfig = None):
-        self.config = config or VTubeStudioConfig()
+    def __init__(self, config: Live2DConfig = None):
+        self.config = config or Live2DConfig()
         self.websocket = None
         self.auth_token = None
         self.connected = False
         
-        self.fred_process = None
-        self.fred_input_queue = None
-        self.fred_output_queue = None
-        self.repeating_dict = None
+        self.llm = FredT5()
+        self.repeating_dict = {}
 
     async def connect(self) -> bool:
         try:
@@ -40,7 +38,6 @@ class VTubeStudioIntegration:
             raise Live2DConnectionError(f"Failed to connect: {str(e)}")
 
     async def _get_token(self) -> str:
-        """Request new authentication token from VTube Studio."""
         payload = {
             "apiName": self.config.api_name,
             "apiVersion": self.config.api_version,
@@ -85,66 +82,55 @@ class VTubeStudioIntegration:
 
     async def set_parameter(self, param_name: str, value: float) -> None:
         try:
-            if not await self._ensure_connection():
-                return
+            retry_count = 3
+            while retry_count > 0:
+                if not await self._ensure_connection():
+                    retry_count -= 1
+                    continue
 
-            payload = {
-                "apiName": self.config.api_name,
-                "apiVersion": self.config.api_version,
-                "requestID": self.config.request_id,
-                "messageType": "InjectParameterDataRequest",
-                "data": {
-                    "mode": "set",
-                    "parameterValues": [
-                        {
-                            "id": param_name,
-                            "value": value
-                        }
-                    ]
+                payload = {
+                    "apiName": self.config.api_name,
+                    "apiVersion": self.config.api_version,
+                    "requestID": self.config.request_id,
+                    "messageType": "InjectParameterDataRequest",
+                    "data": {
+                        "mode": "set",
+                        "parameterValues": [
+                            {
+                                "id": param_name,
+                                "value": value
+                            }
+                        ]
+                    }
                 }
-            }
-            
-            await self.websocket.send(json.dumps(payload))
-            await self.websocket.recv()
-            
+                
+                await self.websocket.send(json.dumps(payload))
+                await self.websocket.recv()
+                return
+                
         except Exception as e:
-            print(f"[VTUBE ERR] Failed to set parameter: {e}")
+            print(f"[VTUBE ERR] Failed to set parameter after retries: {e}")
             self.connected = False
 
-    def setup_fred_process(self) -> None:
-        manager = multiprocessing.Manager()
-        loading_flag = manager.Event()
-        self.fred_input_queue = manager.Queue()
-        self.fred_output_queue = manager.Queue()
-        self.repeating_dict = manager.dict()
-        
-        self.fred_process = multiprocessing.Process(
-            target=FRED_PROCESS,
-            args=(loading_flag, self.fred_input_queue, self.fred_output_queue, self.repeating_dict)
-        )
-        self.fred_process.start()
-        loading_flag.wait()
+    
 
     async def get_llm_response(self, text: str, context: list) -> Dict[str, Any]:
-        if not self.fred_input_queue:
-            raise RuntimeError("Fred process not initialized. Call setup_fred_process() first.")
-            
-        llm_input, params, danger_context = get_llm_formed_inputs(
-            inp=text,
-            username="User",
-            environment={"env": "dialogue", "sentence_type": "dialog"},
-            dialog_context=context,
-            params_override=None,
-            repeating_dict=self.repeating_dict
-        )
-        
-        self.fred_input_queue.put((llm_input, params, danger_context))
-        return self.fred_output_queue.get()
+        try:
+            return await self.llm.generate_response(
+                text=text,
+                params=None,  
+                repeat_danger_part=context[-1]["content"] if context else ""
+            )
+        except Exception as e:
+            print(f"[LLM ERR] Failed to get response: {e}")
+            return {
+                "reply": "",
+                "emotion": "нет",
+                "command": "нет",
+                "tokens": 0,
+                "stopped": ""
+            }
 
     async def cleanup(self) -> None:
-        if self.fred_process:
-            self.fred_process.terminate()
-            self.fred_process.join()
-            
         if self.websocket:
             await self.websocket.close()
