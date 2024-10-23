@@ -1,82 +1,46 @@
+from typing import Optional, Dict, List
 import asyncio
-import logging
-from pathlib import Path
-import signal
-from typing import Optional
+from .llm.fred_t5 import FredT5
+from .tts.silero_tts import SileroTTS
+from .live2d.vtube_studio import VTubeStudioIntegration
+from .utils.audio import AudioProcessor
+from .config.settings import LLMConfig, TTSConfig, VTubeStudioConfig
 
-from config.settings import AppConfig
-from models.tts.silero import SileroTTS
-from models.live2d.integration import Live2DIntegration
-from utils.audio import AudioProcessor
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-
-logger = logging.getLogger(__name__)
-
-class VTuberApplication:
-    def __init__(self, config: Optional[AppConfig] = None):
-        self.config = config or AppConfig()
-        self.tts = SileroTTS(self.config.tts)
-        self.live2d = Live2DIntegration(self.config.live2d)
+class AIIntegration:
+    def __init__(
+        self,
+        llm_config: Optional[LLMConfig] = None,
+        tts_config: Optional[TTSConfig] = None,
+        vtube_config: Optional[VTubeStudioConfig] = None
+    ):
+        self.llm = FredT5(llm_config)
+        self.tts = SileroTTS(tts_config)
+        self.live2d = VTubeStudioIntegration(vtube_config)
         self.audio_processor = AudioProcessor()
-        self.running = False
 
-    async def initialize(self):
-        """Initialize all components"""
-        logger.info("Initializing VTuber application...")
+    async def initialize(self) -> None:
+        """Initialize all components."""
+        self.llm.initialize()
         self.tts.initialize()
         await self.live2d.connect()
-        self.running = True
-        logger.info("Initialization complete")
 
-    async def process_message(self, text: str) -> None:
-        """Process a text message through TTS and Live2D"""
-        try:
-            audio = self.tts.generate_audio(text)
-            await self.audio_processor.play_with_lipsync(
-                audio, 
-                self.live2d,
-                self.config.tts.sample_rate
-            )
-        except Exception as e:
-            logger.error(f"Failed to process message: {e}")
-            raise
+    async def process_input(
+        self,
+        text: str,
+        context: Optional[List[Dict]] = None,
+        llm_params: Optional[Dict] = None
+    ) -> None:
+        response = await self.llm.generate_response(text, llm_params, context)
+        
+        audio = self.tts.generate_audio(response["reply"])
+        await self.audio_processor.play_with_lipsync(
+            audio,
+            self.live2d,
+            self.tts.config.sample_rate
+        )
+        
+        return response
 
-    async def cleanup(self):
-        """Cleanup resources"""
-        self.running = False
-        logger.info("Application shutdown complete")
-
-async def main():
-    loop = asyncio.get_running_loop()
-    for sig in (signal.SIGTERM, signal.SIGINT):
-        loop.add_signal_handler(sig, lambda s=sig: asyncio.create_task(shutdown(loop)))
-
-    app = VTuberApplication()
-    await app.initialize()
-
-    try:
-        while app.running:
-            text = input("\nEnter text (or 'quit' to exit): ")
-            if text.lower() == 'quit':
-                break
-            await app.process_message(text)
-    finally:
-        await app.cleanup()
-
-async def shutdown(loop):
-    """Cleanup and shutdown the application"""
-    logger.info('Shutting down...')
-    tasks = [t for t in asyncio.all_tasks() if t is not asyncio.current_task()]
-    [task.cancel() for task in tasks]
-    await asyncio.gather(*tasks, return_exceptions=True)
-    loop.stop()
-
-if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        pass
+    async def cleanup(self) -> None:
+        if self.live2d.websocket:
+            await self.live2d.websocket.close()
