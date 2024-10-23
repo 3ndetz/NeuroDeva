@@ -28,7 +28,7 @@ The TTS system is responsible for converting generated text responses from LLM i
 ## Updates 
 
 ### 23.10.2024:
-So far only separation of TTS module from the main branch, changed the structure & implementation in some parts. Improved project structure, better separation of concerns, proper async/await implementation, enhanced error handling.
+Major code refactoring. Improved project structure, edited some parts (specifically fredt5 class), better separation of concerns, proper async/await implementation, enhanced error handling. 
 
 ## System Requirements
 | Component  | Requirement |
