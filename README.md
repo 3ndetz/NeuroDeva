@@ -25,10 +25,10 @@ Virtual audio routing for clean audio delivery
 
 ## Key Components
 
-Silero TTS Model Integration
-Real-time lip sync with Live2D model
-Audio processing and routing
-WebSocket-based VTube Studio integration
+* Silero TTS Model Integration
+* Real-time lip sync with Live2D model
+* Audio processing and routing
+* WebSocket-based VTube Studio integration
 
 <!-- UPDATES -->
 ## Updates 
