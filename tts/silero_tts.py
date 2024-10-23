@@ -2,8 +2,8 @@ import torch
 import os
 from pathlib import Path
 from typing import Optional, Union
-from ..config.settings import TTSConfig
-from ..utils.exceptions import TTSInitializationError, TTSGenerationError
+from config.settings import TTSConfig
+from utils.exceptions import TTSInitializationError, TTSGenerationError
 
 class SileroTTS:
     def __init__(self, config: TTSConfig = None):
