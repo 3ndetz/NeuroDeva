@@ -37,7 +37,7 @@ Major code refactoring. Improved project structure, edited some parts (specifica
 | RAM  | 6GB+  |
 | Audio  | Virtual Cable support  |
 | OS  | Windows 10/11  |
-| Memory  | 1 GB |
+| Memory  | 5 GB |
 
 <!-- Quick Start -->
 ## Quick Start
