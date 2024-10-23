@@ -11,6 +11,8 @@ class AudioProcessor:
             return 0
         return float(np.abs(audio_chunk).mean())
 
+
+    
     @staticmethod
     async def play_with_lipsync(
         audio: np.ndarray,
@@ -50,3 +52,4 @@ class AudioProcessor:
                 await live2d_integration.set_parameter("MouthOpen", 0.0)
             except:
                 pass
+            
