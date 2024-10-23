@@ -4,6 +4,15 @@ from typing import Dict, List, Tuple, Optional
 import torch
 import os
 
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
 @dataclass
 class LLMConfig:
     model_paths: Dict[str, Dict[str, str]] = field(default_factory=dict)
@@ -29,7 +38,7 @@ class LLMConfig:
 @dataclass
 class TTSConfig:
     sample_rate: int = 48000
-    base_path: Path = Path(__file__).parent.parent / "models" / "tts"
+    base_path: Path = Path(__file__).parent.parent
     model_dir: Path = field(init=False)
     model_path: Path = field(init=False)
     model_file: str = "silero_tts.pt"
@@ -40,9 +49,8 @@ class TTSConfig:
     num_threads: int = 4
 
     def __post_init__(self):
-        self.model_dir = self.base_path / "variants" / "Silero"
+        self.model_dir = self.base_path / "models" / "tts" / "variants" / "Silero"
         self.model_path = self.model_dir / self.model_file
-        os.makedirs(self.model_dir, exist_ok=True)
 
 @dataclass
 class Live2DConfig:
