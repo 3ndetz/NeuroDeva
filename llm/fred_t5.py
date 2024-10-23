@@ -14,6 +14,7 @@ from transformers import (
     StoppingCriteria, 
     StoppingCriteriaList
 )
+from config.settings import LLMConfig
 
 def find_repeating_tokens(sample: list, check: list) -> bool:
     if len(check) > 10 and len(sample) > 10:
@@ -95,18 +96,10 @@ class KeywordsStoppingCriteria(StoppingCriteria):
         return False
 
 class FredT5:
-    def __init__(self):
+    def __init__(self, config: Optional[LLMConfig] = None):
+        self.config = config or LLMConfig()
         self.base_path = Path(os.path.dirname(os.path.realpath(__file__)))
-        self.model_paths = {
-            'instruct': {
-                'id': 'SiberiaSoft/SiberianFredT5-instructor',
-                'localPath': '/variants/SiberianInstructor'
-            },
-            'dialog': {
-                'id': 'SiberiaSoft/SiberianPersonaFred-2',
-                'localPath': '/variants/SiberianPersonaFred'
-            }
-        }
+        self.model_paths = self.config.model_paths
         
         self.tokenizer = None
         self.model = None
@@ -114,11 +107,19 @@ class FredT5:
         self.last_tokens_used = 0
         
         self.cuda_enabled = torch.cuda.is_available()
-        self.device = torch.device("cuda" if self.cuda_enabled else "cpu")
-        self.max_model_memory = int(torch.cuda.mem_get_info()[0] / 1024 ** 3) - 2 if self.cuda_enabled else 18
-        self.model_data_type = torch.bfloat16
+        self.device = torch.device(self.config.device)
+        self.max_model_memory = (
+            int(torch.cuda.mem_get_info()[0] / 1024 ** 3) - 2 
+            if self.cuda_enabled 
+            else self.config.max_model_memory
+        )
+        self.model_data_type = self.config.model_data_type
         
-        self.autocast = torch.cuda.amp.autocast if self.cuda_enabled else self._dummy_context
+        self.autocast = (
+            torch.cuda.amp.autocast 
+            if self.cuda_enabled and self.config.autocast_enabled 
+            else self._dummy_context
+        )
 
     @contextlib.contextmanager
     def _dummy_context(self, *args, **kwargs):
@@ -192,6 +193,13 @@ class FredT5:
     ) -> Dict:
         if not self.initialized:
             self.initialize()
+
+        character_context = """<SC6>Описание ситуации: Я - девушка по имени Ева. Мне 20 лет. 
+Доступные эмоции: агрессия, скука, усталость, интерес, смущение, счастье, веселье, страх.
+Использование эмоций: [эмоция=смущение]
+
+"""
+        model_input = character_context + text + '<extra_id_0>'
 
         default_params = {
             "do_sample": True,
