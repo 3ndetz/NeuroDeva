@@ -32,10 +32,10 @@ Added lanchain integration for better efficiency and future memory integration.
 Tests comparing the previous implementation with lanchained one:
 | Category  | Time taken in s (initial code) | Time taken in s (new code) |
 | ------------- | ------------- | ------------- |
-| Mean Total processing | 8.414 | 10.05 |
-| Mean LLM Generation | 1.848 | 2.4 |
-| Mean Audio Generation | 3.19 | 2.05 |
-| Mean Audio Playback | 3.248 | 5.59 |
+| Mean Total processing | 7.73 | 10.05 |
+| Mean LLM Generation | 1.42 | 2.4 |
+| Mean Audio Generation | 2.09 | 2.05 |
+| Mean Audio Playback | 4.22 | 5.59 |
 
 
 
