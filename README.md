@@ -30,18 +30,56 @@ The TTS system is responsible for converting generated text responses from LLM i
 Added lanchain integration for better efficiency and future memory integration.
 
 Tests comparing the previous implementation with lanchained one:
-| Category | Time taken in s (initial code) | Time taken in s (new code) |
-|:---------|:------------------------------|:--------------------------|
-<td colspan="3">Initialization</td>
-| Full initialization | 17.12 | TBA |
-| LLM | 15.17 | TBA |
-| TTS | 1.21 | TBA |
-| live2D | 0.74 | TBA |
-<td colspan="3">Processing</td>
-| Mean Total processing | 8.414 | TBA |
-| Mean LLM Generation | 1.848 | TBA |
-| Mean Audio Generation | 3.19 | TBA |
-| Mean Audio Playback | 3.248 | TBA |
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Time taken in s (initial code)</th>
+        <th>Time taken in s (new code)</th>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Initialization</strong></td>
+    </tr>
+    <tr>
+        <td>Full initialization</td>
+        <td>17.12</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>LLM</td>
+        <td>15.17</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>TTS</td>
+        <td>1.21</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>live2D</td>
+        <td>0.74</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td colspan="3"><strong>Processing</strong></td>
+    </tr>
+    <tr>
+        <td>Mean Total processing</td>
+        <td>8.414</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>Mean LLM Generation</td>
+        <td>1.848</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>Mean Audio Generation</td>
+        <td>3.19</td>
+        <td>TBA</td>
+    </tr>
+    <tr>
+        <td>Mean Audio Playback</td>
+        <td>3.248</td>
 
 
 
