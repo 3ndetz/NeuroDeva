@@ -30,14 +30,14 @@ The TTS system is responsible for converting generated text responses from LLM i
 Added lanchain integration for better efficiency and future memory integration.
 
 Tests comparing the previous implementation with lanchained one:
-| Category  | Time taken in s (initial code) | Time taken in s (new code) |
-| ------------- | ------------- | ------------- |
-| **Initialization** | | |
-| Full initialization | 17.12 | TBA | 
-| LLM | 15.17 | TBA | 
-| TTS | 1.21 | TBA | 
-| live2D | 0.74 | TBA | 
-| **Processing** | | |
+| Category | Time taken in s (initial code) | Time taken in s (new code) |
+|:---------|:------------------------------|:--------------------------|
+<td colspan="3">Initialization</td>
+| Full initialization | 17.12 | TBA |
+| LLM | 15.17 | TBA |
+| TTS | 1.21 | TBA |
+| live2D | 0.74 | TBA |
+<td colspan="3">Processing</td>
 | Mean Total processing | 8.414 | TBA |
 | Mean LLM Generation | 1.848 | TBA |
 | Mean Audio Generation | 3.19 | TBA |
