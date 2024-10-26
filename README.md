@@ -26,6 +26,17 @@ The TTS system is responsible for converting generated text responses from LLM i
 
 <!-- UPDATES -->
 ## Updates 
+### 26.10.2024:
+Added lanchain integration for better efficiency and future memory integration
+Tests comparing the previous implementation with lanchained one:
+| Category  | Time taken in s (initial code) | Time taken in s (new code) |
+| ------------- | ------------- | ------------- |
+| Total processing | 10.77 | TBA |
+| LLM Generation | 2.82 | TBA |
+| Audio Generation | 4.62 | TBA |
+| Audio Playback | 3.32 | TBA |
+
+
 
 ### 23.10.2024:
 Major code refactoring. Improved project structure, edited some parts (specifically fredt5 class), better separation of concerns, proper async/await implementation, enhanced error handling. 
