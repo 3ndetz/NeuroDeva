@@ -32,16 +32,10 @@ Added lanchain integration for better efficiency and future memory integration.
 Tests comparing the previous implementation with lanchained one:
 | Category  | Time taken in s (initial code) | Time taken in s (new code) |
 | ------------- | ------------- | ------------- |
-Initialization
-| Full initialization | 17.12 | TBA | 
-| LLM | 15.17 | TBA | 
-| TTS | 1.21 | TBA | 
-| live2D | 0.74 | TBA | 
-Processing
-| Mean Total processing | 8.414 | TBA |
-| Mean LLM Generation | 1.848 | TBA |
-| Mean Audio Generation | 3.19 | TBA |
-| Mean Audio Playback | 3.248 | TBA |
+| Mean Total processing | 8.414 | 10.05 |
+| Mean LLM Generation | 1.848 | 2.4 |
+| Mean Audio Generation | 3.19 | 2.05 |
+| Mean Audio Playback | 3.248 | 5.59 |
 
 
 
