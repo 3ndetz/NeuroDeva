@@ -2178,14 +2178,11 @@ A:> NetTyan: {reply_without_filter} ({answer_filter_topics_str})
 
         sio = socketio.Client()
 
-
-        # netTyan token M1Hqrw1OUTPOg0ofettX
-        # https://www.donationalerts.com/widget/alerts?group_id=1&token=M1Hqrw1OUTPOg0ofettX
-        # SayNex token dhNCV3i7bTjSZilcrg68
+        your_da_token = "" # fill donationalerts token
 
         @sio.on('connect')
         def on_connect():
-            sio.emit('add-user', {"token": "M1Hqrw1OUTPOg0ofettX", "type": "alert_widget"})  #
+            sio.emit('add-user', {"token": your_da_token, "type": "alert_widget"})  #
 
 
         @sio.on('donation')
@@ -2201,9 +2198,6 @@ A:> NetTyan: {reply_without_filter} ({answer_filter_topics_str})
 
 
         sio.connect('wss://socket.donationalerts.ru:443', transports='websocket')
-
-        # https: // www.donationalerts.com / widget / alerts?group_id = 3 & token = dhNCV3i7bTjSZilcrg68
-        # https://www.donationalerts.com/widget/alerts?group_id=1&token=dhNCV3i7bTjSZilcrg68
 
         ctx.YouTubeCommentCheckerEnabled = False
         ctx.YouTubeAppEnabled = False
