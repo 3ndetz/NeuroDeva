@@ -53,18 +53,21 @@ Languages: Python, Java ([for Minecraft-part](https://github.com/3ndetz/autoclef
 - OBS
 - VTube Studio
 - Docker Desktop (WSL)
-- Made on Windows 10
 </details>
 
-<details><summary>RepoCodeDisclaimer ⚠️</summary>
+> [!CAUTION]
+> This is FIRST OLD OPEN PROTOTYPE of NetTyan project
+> New agentic version currently is in active development and is not ready for final publishing
 
-The "code" presented in the repository is mostly for prototyping. It should not be considered as a sample, it can be useful only to those who will be interested in repeating my experience, and not for "seekers of other people's mistakes" =)
+> [!CAUTION]
+> <details><summary>RepoCodeDisclaimer ⚠️</summary>
+>
+> The "code" presented in the repository is mostly for prototyping. It should not be considered as a sample, it can be useful only to those who will be interested in repeating my experience, and not for "seekers of other people's mistakes" =)
 
-The emphasis was on the fact that in the shortest possible time to make a project that can really impress someone and once again prove the fact that everything is possible 💪
+> The emphasis was on the fact that in the shortest possible time to make a project that can really impress someone and once again prove the fact that everything is possible 💪
 
-In the code you can see huge commented out dumps, don't pay attention, because I had a choice to publish the code or not. I didn't format it in any way and didn't prepare it for publishing, so I didn't hesitate to leave crutches and other nasty things in there, like debug prints. However, I did format some things, but only the most attentive will notice this "feature".
-
-</details>
+> In the code you can see huge commented out dumps, don't pay attention, because I had a choice to publish the code or not. I didn't format it in any way and didn't prepare it for publishing, so I didn't hesitate to leave crutches and other nasty things in there, like debug prints. However, I did format some things, but only the most attentive will notice this "feature".
+> </details>
 
 ## Коротко о главном
 
