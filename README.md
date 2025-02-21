@@ -57,6 +57,7 @@ Languages: Python, Java ([for Minecraft-part](https://github.com/3ndetz/autoclef
 
 > [!CAUTION]
 > This is FIRST OLD OPEN PROTOTYPE of NetTyan project
+> 
 > New agentic version currently is in active development and is not ready for final publishing
 
 > [!CAUTION]
